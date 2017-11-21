@@ -1,0 +1,34 @@
+{
+  "name": "hsv3",
+  "version": "1.0.0",
+  "description": "convenience wrapper for establishing version 3 tor hidden services",
+  "main": "index.js",
+  "bin": {
+    "hsv3": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bookchin/hsv3.git"
+  },
+  "keywords": [
+    "tor",
+    "hidden",
+    "service",
+    "version",
+    "3"
+  ],
+  "author": "Gordon Hall <gordonh@member.fsf.org>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/bookchin/hsv3/issues"
+  },
+  "homepage": "https://github.com/bookchin/hsv3#readme",
+  "dependencies": {
+    "commander": "^2.11.0",
+    "granax": "^3.0.0",
+    "mkdirp": "^0.5.1"
+  }
+}
