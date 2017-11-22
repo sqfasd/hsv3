@@ -1,6 +1,6 @@
 {
   "name": "hsv3",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "convenience wrapper for establishing version 3 tor hidden services",
   "main": "index.js",
   "bin": {
