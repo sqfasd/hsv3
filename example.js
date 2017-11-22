@@ -15,11 +15,13 @@ server.listen(8099);
 
 const tor = hsv3([
   {
-    dataDirectory,
+    dataDirectory: path.join(dataDirectory, 'hidden_service'),
     virtualPort: 80,
     localMapping: '127.0.0.1:8099'
   }
-]);
+], {
+  DataDirectory: dataDirectory
+});
 
 tor.on('error', (err) => {
   console.error(err);
@@ -28,5 +30,8 @@ tor.on('error', (err) => {
 
 tor.on('ready', () => {
   console.info('hidden service v3 established',
-    readFileSync(path.join(dataDirectory, 'hostname')).toString());
+    readFileSync(path.join(dataDirectory, 'hidden_service',
+      'hostname')).toString());
 });
+
+tor.process.stdout.pipe(process.stdout);

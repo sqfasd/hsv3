@@ -27,11 +27,13 @@ if (!receivedValidOptions) {
 
 const tor = hsv3([
   {
-    dataDirectory: program.datadir,
+    dataDirectory: path.join(program.datadir, 'hidden_service'),
     virtualPort: program.virtport,
     localMapping: program.mapping
   }
-]);
+], {
+  DataDirectory: program.datadir
+});
 
 tor.on('error', (err) => {
   console.error('  ');
@@ -40,8 +42,8 @@ tor.on('error', (err) => {
 });
 
 tor.on('ready', () => {
-  const hostname = fs.readFileSync(path.join(program.datadir, 'hostname'))
-    .toString();
+  const hostname = fs.readFileSync(path.join(program.datadir,
+    'hidden_service', 'hostname')).toString();
 
   console.info('  ');
   console.info('  V3 Hidden Service Established: ' + hostname);
