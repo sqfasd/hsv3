@@ -9,17 +9,14 @@ install
 as a dependency of your own package
 
 ```
-GRANAX_USE_TOR_ALPHA=1 npm install hsv3
+npm install hsv3
 ```
 
 as a standalone command line tool
 
 ```
-GRANAX_USE_TOR_ALPHA=1 npm install hsv3 --global
+npm install hsv3 --global
 ```
-
-> note the environment variable `GRANAX_USE_TOR_ALPHA` must be set during 
-> installation until v3 hidden services make it into stable
 
 usage
 -----
